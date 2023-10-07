@@ -1,1 +1,31 @@
+a = 3252452
+b = "anurag"
+c = 23.43
+d = 'gas'
+f = True
+v = complex(5,4) # complex number
+print(a,b,c,d)
+print(type(d))
+print(type(b))
+ 
+#  list
+list = [2,3,4,5,"str","hellp"]
+print(list)
+print(type(list))
 
+#list are change able or mutable 
+
+# ----- Tuple 
+tup =  (1,2,4,5 ,"hello ","name")
+print(tup)
+print(type(tup))
+# tuples are immutables 
+
+
+
+# ---map data type  -> dictionery
+dic = {"name": "saksi ", "age ": 34}
+print(dic)
+
+
+# python me everything si object
