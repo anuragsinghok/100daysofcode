@@ -1,0 +1,106 @@
+# The conversion of one data type into the other data type is known as type casting in python or type conversion in python.
+# Python supports a wide variety of functions or methods like: intO, floato, stro, ordO, hex0, octO, tupleO, setO, listO, dict@, etc. for the type casting in python.
+# Two Types of Typecasting:
+# 1. Explicit Conversion (Explicit type casting in python)
+# explicit done by us user or programmer 
+# 2. Implicit Conversion (Implicit type casting in python).
+# implicit is done by python
+
+a = 20 
+b = "12"  #string
+c = a+int(b) #typecasting of b
+f = a+ float(b)
+print(type(b))
+print(c)
+print(f)
+#-------------------------------------------------------------
+  # By default input take value as string 
+# we need to typecast it : int(input())
+
+a = input() 
+print("my name is " ,a)
+
+x = input(" enter first number ")
+y = input(" enter second number ")
+print(x+y) #it will concatenate the string
+
+print(int(x)+int(y)) #type casted the values and now it will add 
+#----------------------------------------------------------------
+
+  name = "Anurag"
+friend = 'boy'
+print(type(name))
+print(type(friend))
+print("hello"+name)
+map = 'he said ,"i want to eat pizza"' #these are ways you can print a statement with double qoute
+map = "he said, \"i want to eat pizza" #either use \ of ' single qoutes
+print(map)
+
+# Multiline Strings
+# If our string has multiple lines, we can create them like this:
+
+a = """Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut."""
+print(a) # multiline string is used we we want to write a paragraph or multiple lines
+
+print(name[0])#indexing of a string 
+
+# Accessing Characters of a String
+# In Python, string is like an array of characters. We can access parts of string by using its index which starts from 0.
+# Square brackets can be used to access elements of the string.
+print(name[0])
+
+# Looping through the string
+# We can loop through strings using a for loop like this:
+for character  in a: 
+  print(character)
+
+# Above code prints all the characters in the string name one by one!
+#----------------------------------------------------------------------------------
+  #string slicing and string operations
+names = "Anurag , shubham"
+print(names[0:5]) #go from index 0 to 4 and print "Anura"
+print(names[:5]) #if we do not put zero then python will automatically zero 
+print(len(names))
+
+print(names[0:-3])# negative slicing
+#what will happen in above is "print(fruit[0:len(fruit)-3])" 
+#means 0 se start krega aur total lenths se -3 krke print krega
+name = "anurag"
+print(name[-4:-2])
+# its act as len(name)-4:len(name)-2 which give output as ur
+  #-----------------------------------------------------------------------------------------
+  #string methods
+
+a = "Anurag!!! !! !!" #strings are immutable
+# whatever we do it just make a copy of and string original string will not be affected 
+print(len(a))
+print(a.upper())
+print(a.lower())
+print(a.rstrip("!")) #it will strip the trailing characters and leading characters ko nhi krta remove 
+print(a.replace("Anurag","john")) # all the Anurag it will replace with john
+
+print(a.split(" ")) # it will make a list and split all the strings in a list speratly
+
+blogheading = "introduction to pyThon"
+print(blogheading.capitalize()) 
+# capitalize() :
+# The capitalized() method turns only the nirst character or the string to uppercase and the rest other characters of the string are turned to lowercase. The string has no effect if the first character is already uppercase.
+
+
+str1 = "Welcome to the Console!!!" #allign all str1 cahr in center 
+print(str1. center (50 )) #len will increase to 50 from original 
+
+print(a.count("a"))
+
+print(str1.endswith("!!")) # it is used to check string is ending wiht given end or not
+#it will return a boolean datatype
+
+str1 ="Welcome to the Console !!!"
+print(str1. endswith("to", 4, 10))
+
+# find():
+# The find method searches for the first occurrence of the given value and returns the index where it is present. If given value is absent from the string then return -1.
+# Example:
+str1 = "He's name is Dan. He is an honest man."
+print(str1.find("is")) 
