@@ -1,0 +1,111 @@
+#conditional operators
+#>,<,>=,<=,==,!=
+a  = int(input("enter your age: "))
+
+if (a>18):
+    print("you are legal")
+elif(a==18):
+    print("congrats you just turned legal")
+else:
+    print("you are illegal")
+
+#note file name should not similar to python inbuilt files, modules,etc
+
+#nesting of loops (example)
+num = 18
+if (num < 0):
+   print("Number is negative.")
+elif (num > 0):
+    if(num <=10):
+      print ("Number is between 1-10") 
+    elif (num > 10 and num <= 20):
+      print ("Number is between 11-20")
+    else:
+       print("Number is greater than 20")
+else:
+ print ("Number is zero")
+        #---------------------------------
+#match case statement it introduced in python3
+# and similar to switch case
+
+x = 4 
+ # x is a variable to match
+match x:
+
+    case 0:
+        print("x is zero")
+    case 4 if x % 2 == 0:
+        print("x % 2 ==0 and case is 4")
+ # underscore is used for default cases 
+    case _: # this is a default case
+        print(x)
+
+# in python break statement is not mandatory and if other cases matchs it will automatically run no need of break statements
+# if a case is matched then it will not run below one 
+#--------------------------------------------
+        #for loops 
+name = "Anurag"
+for i in name: #i go on each character of name
+    print(i)
+    # if (i == 'a'):
+        # print("this is something special") #just playing here ik it make no sense special a
+
+color = ["red" ,"blue","green"]
+for i in color: # it goes to each element of color
+    print(i)
+    for j in i:
+        print(j)
+
+for i in range(20000): # means 0 se  19999 tk jyega you can put  range also like (10,20) so it will print form 10 to 19
+    print(i)
+
+
+# range(stop: int)
+# range(start: int, stop:
+# int, step: int=...)
+# range (stop) -> range object range(start, stopl, step)) -> range object
+# Return an object that produces a sequence of integers from start (inclusive) to stop (exclusive) by
+# step. range(i, j) produces i, i+1, i+2, ..., j-1. start defaults to 0, and stop is omitted! range(4) produces 0, 1, 2, 3.
+# These are exactly the valid indices for a list of 4 elements. When step is given, it specifies the increment
+
+for i in range(1,12,3): # it will start from 1 goes upto 12 and print with gap of 3 
+    print(i)
+        #--------------------------------------------------
+#while loop 
+for i in range(4):
+    print(i)
+#same things we can do using while loop 
+i = 0
+while(i<4): #ideally we use while loop in complex situation or problems
+    print(i) 
+    i+=1 #it will increment the value of i after printing by 1
+
+# the output of both the programs will be same
+
+#decrementing while loop
+count = 5
+while(count>0):
+    print(count)
+    count = count-1
+    # one mistake in while loop it will become an infinte loop 
+
+# do while loop does not exist in python 
+#for contexted do while loop run the loop atleast once /1 time after that if condition true then execute
+        #----------------------------------------------------------
+#break and continue loop
+#-------break means loop ko chood ke nikl jao and continue means iteration ko chod ke nikal jao**************
+for i in range(12):
+    print("5 x ",i ,"=", 5*i )
+    if i ==10:
+        break
+    #after 10 it will exit the loop 
+# continue  -> it will leave the iteration and skip the iteration
+
+for i in range(12):
+    if(i == 10):
+        print ("Skip the iteration" )
+        continue # continue ke upper jo bhi hai wo execute hoga and rest niche ka skip krdega only if and rest niche ka nhi 
+    print("5 X", i+1,"=" , 5*i)
+
+#you can use do while by giving a true condition to true and then give its main condition
+        
