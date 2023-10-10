@@ -1,0 +1,155 @@
+# Python Functions
+# A function is a block of code that performs a specific task whenever it is called. In bigger programs, where we have large amounts of code, it is advisable to create or use existing functions that make the program flow organized and neat.
+# There are two types of functions:
+# 1. Built-in functions
+# 2. User-defined functions
+
+# Built-in functions:
+# These functions are defined and pre-coded in python. Some examples of built-in functions are as follows:
+# minO, max0, lenO, sum0, typeO, rangeO, dictO, list0, tupleO, setO, printO, etc.
+
+# User-defined functions:
+# We can create functions to perform specific tasks as per our needs. Such functions are called user-defined functions
+
+def calculate(a,b): #function to find mean of numbers
+    mean = (a*b)/(a+b)
+    print(mean)
+
+def isgreater(a,b): # function to find greater number 
+    if(a>b):
+        print("first num is greater")
+    else:
+        print("second number is greater of equal")
+
+
+def islesser(a,b):
+    pass # pass is used to tell python i will give defination of python later just pass this function
+
+a= 9
+b =6
+
+isgreater(a,b)
+
+# if(a>b):
+#         print("first num is greater")
+# else:
+#         print("second number is greater of equal")
+# gmean = (a*b)/(a+b) # instead of writing this logic  again and we can simply make a function and call the function again and again where ever we want 
+print(calculate(a,b))
+
+# user define functions we need to define with "def"
+# builtin functions we don't need to define with "def"
+#------------------------------------------------------------
+      #function arguements
+# Function Arguments and return statement
+# There are four types of arguments that we can provide in a function:
+# • Default Arguments
+# • Keyword Arguments
+# • Variable length Arguments
+# • Required arguement
+
+# def average(a,b):
+def average(a = 9,b=4): #this is default arguement if i call just average() then it will run also without showing error as i have given default arguement but if i give arguemet on the time of calling th efunction then it will ignore the default arguement from the function
+    print("The average is ", (a+b)/2)
+
+average(4,6)
+average(b =6 ) # I can give anyvalue when calling then default value function
+
+# Keyword arguments:
+# We can provide arguments with key = value, this way the
+# interpreter recognizes the arguments by the parameter name.
+# Hence, the the order in which the arguments are passed does not matter.
+# Example:
+def name(fname, mname, Iname):
+ print( "Hello, ", fname, mname, Iname)
+
+name(mname = "Peter", Iname = "Wesker", fname ="Jade")
+
+# Required arguments:
+# In case we don't pass the arguments with a key = value syntax,
+# then it is necessary to pass the arguments in the correct positional order and the number of arguments passed should match with actual function definition.
+# Example 1: when number of arguments passed does not match to the actual function definition.
+def name(fname, mname, Lname = "Anurag "):
+ print( "Hello,", fname, mname, Lname)
+
+name( "Peter", "Quill") # 3rd arguement is required other wise it shows error
+# either you need to give the 3rd argument or you can give it in function 
+
+
+# Arbitrary Arguments:
+# While creating a function, pass a * before the parameter name while defining the function. The function accesses the arguments by processing them in the form of tuple.
+# Example:
+
+def name( *name ):
+  print(type(name))
+  print( "Hello,", name[0], name[1], name[2])
+
+name( "James", "Buchanan", "Barnes")
+
+def name(*F): # you can give multiple agruement as much as you after one by one by below method in function defination
+  print("hello",F[0],F[1],F[2])# it gives a tuple of numbers
+name(3,4,6)
+
+# return staement
+
+def average(a = 9,b=4): #this is default arguement if i call just average() then it will run also without showing error as i have given default arguement but if i give arguemet on the time of calling th efunction then it will ignore the default arguement from the function
+    return (a+b)/2# if we put mutilple returns here 1 st return will be considered rest all will not be considered
+
+print(average())
+  #-------------------------------------------------------
+  #lists
+# Python Lists
+# • Lists are ordered collection of data items.
+# • They store multiple items in a single variable.
+# • List items are separated by commas and enclosed within square brackets (].
+# • Lists are changeable meaning we can alter them after creation.
+# Example 1:
+
+lst1 = [1,2,2,3,5,4,6]# length of this list is 7 but index is 6
+lst3 = [1,2,2,3,5,4, 6,"Anurag", True]# you can put any dataype in list but it is adviseable or good practice to do it 
+lst2 = ["Red", "Green","Blue"]
+print(lst3)
+print(lst1[1])
+print (lst2)
+# we make list when we want to put multiple things under same name then we create list and lists are mutable
+
+print(lst1[-3]) #negative indexing
+print(lst1[len(lst1)-3]) # same negativ eindex converted into positive way to see you can remind it it can be seen as that
+print(lst1[7-3]) # all above 2 and this is same just a way to get better understanding
+# 7 is length of list not the index of list
+print(len(lst1)) #output is 7 you  can check it out by youself 
+
+
+# Range of Index:
+# You can print a range of list items by specifying where you want to start, where do you want to end and if you want to skip elements in between the range.
+# Syntax:
+# listName[start : end : jumpIndex]
+# Note: jump Index is optional. We will see this in later examples.
+
+if 6 in lst1:
+# if "6" in lst1: # this 6 will be treated as string
+    print("yes")
+else:
+    print("no")
+if "An" in "Anurag":
+    print("yes")
+# we can to slicing here like string also like below:
+
+print(lst1[1:-1])
+print(lst1[1:4:2])
+
+# List Comprehension
+# List comprehensions are used for creating new lists from other iterables like lists, tuples, dictionaries, sets, and even in arrays and strings.
+# Syntax:
+# List = [Expression (item) for item in iterable if Condition]
+# Expression: It is the item which is being iterated.
+# Iterable: It can be list, tuples, dictionaries, sets, and even in arrays and strings.
+# Condition: Condition checks if the item should be added to the new list or not.
+# Example 1: Accepts items with the small letter "o" in the new list
+names = ["Milo", "Sarah", "Bruno", "Anastasia", "Rosa"]
+namesWith_0 = [item for item in names if "o" in item]
+print(namesWith_0)
+
+
+lst = [i for i in range(10)]
+print(lst)
