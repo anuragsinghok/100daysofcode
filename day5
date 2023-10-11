@@ -1,0 +1,127 @@
+#docstring and pep8
+# Docstrings in python
+# Python docstrings are the string literals that appear right after the definition of a function, method, class, or modules
+
+def square(n):
+  '''Takes in a number n, returns the square of n'''
+  print(n**2)
+
+square(5)
+print(square.__doc__) # it means doc is not comment it is special it is to tell about program
+#doc string change krne se program change ho skte hai
+
+
+# Python Comments vs Docstrings
+# Python Comments
+# Comments are descriptions that help programmers better understand the intent and functionality of the program. They are completely ignored by the Python interpreter.
+# Python docstrings
+# As mentioned above, Python docstrings are strings used right after the definition of a function, method, class, or module (like in Example 1). They are used to document our code.
+# We can access these docstrings using the doc attribute
+
+# docstring will always right below function name or above function body
+ 
+
+
+
+
+#------------------------------------------------
+#  PEP 8
+# PEP 8 is a document that provides guidelines and best practices on how to write Python code. It was written in 2001 by Guido van Rossum, Barry Warsaw, and Nick Coghlan. The primary focus of PEP 8 is to improve the readability and consistency of Python code.
+# PEP stands for Python Enhancement Proposal, and there are several of them. A PEP is a document that describes new features proposed for Python and documents aspects of Python, like design and style, for the community.
+
+# The Zen of Python
+# Long time Pythoneer Tim Peters succinctly channels the BDFL's guiding principles for Python's design into 20 aphorisms, only 19 of which have been written down
+
+# it can be seen as  "import this " write in terminal  "it is a poem or easter egg"
+
+  #----------------------------------------------
+
+  # f-strings in python
+# fstring is used for string formatting
+# It is a new string formatting mechanism introduced by the PEP
+# 498. It is also known as Literal String Interpolation or more commonly as F-strings (f character preceding the string literal).
+# The primary focus of this mechanism is to make the interpolation easier.
+# When we prefix the string with the letter 'f, the string becomes the f-string itself. The f-string can be formatted in much same as the str.format0 method. The f-string offers a convenient way to embed Python expression inside string literals for
+
+letter = " hey my name is {0} and i am from {1}" #if put index then the first in formet come first and 2 nd as 2nd vise versa
+country = "india"
+name = "Anurag"
+print(letter.format(name,country))
+
+# above is a old traditional method of fstring
+
+# now lets see new
+
+print(f" Hey my name is {name} ad i am from {country}") # this is newly introduced in python 3.6
+
+
+print(f"We use f-strings like this: Hey my name is {{name}} and I am from {{country}}") # it will print as it is we need to put 2 curly brackets for this
+#-------------------------------
+  #tuples 
+tup = (1,2,3,43,"green",True)
+# tup(1,)# you need to put , if you are creating 1 element tuple other wise python get confused it is tuple or integer
+print(type(tup))
+# we know tuple are immutable
+# rest it is similar to list
+print(len(tup)) 
+#slicing in tuple
+
+tup2 = tup[1:4]
+print(tup2)
+  #----------------------------------------
+  #lists
+# Python Lists
+# • Lists are ordered collection of data items.
+# • They store multiple items in a single variable.
+# • List items are separated by commas and enclosed within square brackets (].
+# • Lists are changeable meaning we can alter them after creation.
+# Example 1:
+
+lst1 = [1,2,2,3,5,4,6]# length of this list is 7 but index is 6
+lst3 = [1,2,2,3,5,4, 6,"Anurag", True]# you can put any dataype in list but it is adviseable or good practice to do it 
+lst2 = ["Red", "Green","Blue"]
+print(lst3)
+print(lst1[1])
+print (lst2)
+# we make list when we want to put multiple things under same name then we create list and lists are mutable
+
+print(lst1[-3]) #negative indexing
+print(lst1[len(lst1)-3]) # same negativ eindex converted into positive way to see you can remind it it can be seen as that
+print(lst1[7-3]) # all above 2 and this is same just a way to get better understanding
+# 7 is length of list not the index of list
+print(len(lst1)) #output is 7 you  can check it out by youself 
+
+
+# Range of Index:
+# You can print a range of list items by specifying where you want to start, where do you want to end and if you want to skip elements in between the range.
+# Syntax:
+# listName[start : end : jumpIndex]
+# Note: jump Index is optional. We will see this in later examples.
+
+if 6 in lst1:
+# if "6" in lst1: # this 6 will be treated as string
+    print("yes")
+else:
+    print("no")
+if "An" in "Anurag":
+    print("yes")
+# we can to slicing here like string also like below:
+
+print(lst1[1:-1])
+print(lst1[1:4:2])
+
+# List Comprehension
+# List comprehensions are used for creating new lists from other iterables like lists, tuples, dictionaries, sets, and even in arrays and strings.
+# Syntax:
+# List = [Expression (item) for item in iterable if Condition]
+# Expression: It is the item which is being iterated.
+# Iterable: It can be list, tuples, dictionaries, sets, and even in arrays and strings.
+# Condition: Condition checks if the item should be added to the new list or not.
+# Example 1: Accepts items with the small letter "o" in the new list
+names = ["Milo", "Sarah", "Bruno", "Anastasia", "Rosa"]
+namesWith_0 = [item for item in names if "o" in item]
+print(namesWith_0)
+
+
+lst = [i for i in range(10)]
+print(lst)
