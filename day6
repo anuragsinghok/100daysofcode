@@ -1,0 +1,121 @@
+# so i just wantto share a note here guys i post what i learn on daily bases which ever concepts topics i learn in python it can be 1 or more then1 and i post here and some code i comment it out as there are other code also i executed so if you copy an dpaste any code in you code editor make sure you read all line with notes then use it of look it 
+# Recursion in python
+# Recursion is the process of defining something in terms of itself.
+# A physical world example would be to place two parallel mirrors facing each other. Any object in between them would be reflected recursively.
+# Python Recursive Function
+# In Python, we know that a function can call other functions. It is even possible for the function to call itself. These types of construct are termed as recursive functions
+
+# factorial(7) = 7*6*5*4*3*2*1
+
+# factorial(n) = n*factorial(n-1) # best example of factorial
+
+# def factorial(n):
+#     if(n==0 or n==1):
+#         return 1
+#     else:
+#         return n*factorial(n-1)
+
+# print(factorial(3))
+# print(factorial(4))
+# print(factorial(5))
+
+# 5*factorial(4)
+# 5*4*factorial(3)
+# 5*4*3*factorial(2)
+# 5*4*3*2*factorial(1)
+
+
+# another example of recursion is fibonacci number
+# fibonacci sequence
+# †(0) =0
+# f(1) = 1
+# f(2) = f(1) + f(0)
+# f(n) = f(n-1) + f(n-2)
+ 
+
+
+#do this after finishing imp tasks
+#write a program to print the fibonacci sequence
+def fibo(f):
+    if (f == 0 ):
+        return 0
+    elif(f ==1):
+        return 1
+    else:
+        while count
+
+print(fibo(21))
+
+# 0 1 1 2 3 5 8............
+  #-----------------------------------------------
+  # Python Sets
+# Sets are unordered collection of data items. They store multiple items in a single variable. Set items are separated by commas and enclosed within curly brackets f. Sets are unchangeable, meaning you cannot change items of the set once created. Sets do not contain duplicate items
+s = {2,4,2,6}
+print(s) # it is unordered collection of data items 
+# we use{}
+#it do not repeat values
+
+
+info = {"carla", 19, False,5.9 ,19}
+print(info)# they don't maintain order
+
+
+Anurag = {}# this will treated as dictonary not set as in set and dict. we use {}
+# for creating a set we need to do this
+Anurag = set()
+print(type(Anurag))
+
+# for accesses we can use for loops:
+for val in info:
+    print(val)
+  #----------------------------------
+  #dictionary
+
+dic = {
+    "Anurag": "Human being",
+    "spoon": "object",
+    45 : "Anurag",
+
+}
+
+print(dic["Anurag"])
+print(dic[45])
+
+# Python Dictionaries
+# Dictionaries are ordered collection of data items. They store multiple items in a single variable.
+# Dictionary items are key-value pairs that are separated by commas and enclosed within curly
+# brackets{}'
+
+info = {'name' : 'Anurag','age' :19,'eligible':True}
+print(info)
+print(info["name"])
+print(info.values())#it will give all the values
+print(info.keys())#it will give you all the keys
+  #---------------
+
+  #Dictionary methods
+
+# update
+# The update method updates the value of the key provided to it if the item already exists in the dictionary, else it creates a new key-value pair.
+# Example:
+
+info = {'name': 'Karan', 'age':19, 'eligible' :True}
+print(info)
+info. update({'age' :20})
+info. update({'DOB':2001})
+print(info)
+
+e1 = {122:32,123:43,325:43}
+e2 = {222:54,34:23}
+
+e1.update(e2) # by this method we can update whole list
+
+e1.pop(122) # it will pop out the particular key pair
+print(e1)
+e1.popitem()#it will pop out the last item of dictionary
+
+# del e1 # it will delete the whole dict
+# del e1[122] #it will delete the particular keypair
+
+#-----------------------
+  
