@@ -1,0 +1,58 @@
+# Create a program capable of displaying questions to the user like KBC.
+# Use List data type to store the questions and their correct answers.
+# Display the final amount the person is taking home after playing the game
+
+# game = "welcome to kbc the game"
+# print(game.center(50))
+
+# print("Q1 -> what comes before xyz")
+# lst =["uvw" , "wfs" ,"abc" ,"kbc"]
+# i = input("enter the anser")
+# if i == "uvw":
+#     print(f"congratulation you're answer is right  it is {lst[0]}")
+# else: 
+#     print("sorry you lose")
+
+# print("now we came to 2nd question. ")
+# print("Q1 -> what comes before 345")
+# lst2 =[23 ,56,12,89]
+# i2 = int(input("enter the anser\n"))
+# if i2 == 12:
+#     print(f"congratulation you're answer is right  it is {lst[3]}")
+# else: 
+#     print("sorry you lose")
+
+
+#-------------------------other way to do it-----------------------------
+
+game = "welcome to kbc the game"
+print(game.center(50))
+
+questions = [["which languge you can for making a ai application ,->  " ,"python" , "javascript " , "c++" ,"linux " ,"php","none",2 ],
+             ["which languge you can for making a ai application ,->  ", "python" , "javascript " , "c++" ,"linux ","php" ,"none",2 ],
+             ["which languge you can for making a ai application ,->  ", "python" , "javascript " , "c++" ,"linux " ,"php","none",2 ],
+             ["which languge you can for making a ai application ,->  ", "python" , "javascript " , "c++" ,"linux " ,"php","none",2 ]]
+
+
+levels = [1000,2000,5000,20000,500000,1000000,10000000]
+money = 0
+for i in range(0,len(questions)):
+    question = questions[i]
+
+    print(f"this question is for {levels[i]}")
+    print(f"a {question[1]}  b .{question[2]}  c. {question[3]}  d. {question[4]}")
+    reply = int(input("enter your answer (1-4) , press 0 to quit"))
+    if reply == 0:
+        money = levels[i-1]
+        break
+    if (reply == question[-1]):
+        print(f"you won , you have won {levels[i]}")
+        if i ==4 :
+            money = 10000
+        elif i ==9:
+            money =500000
+        
+    else:
+        print("wrong answers")
+        break
+
