@@ -1,0 +1,40 @@
+# How importing in python works
+# Importing in Python is the process of loading code from a Python module into the current script.
+# This allows you to use the functions and variables defined in the module in your current script, as well as any additional modules that the imported module may depend on.
+# To import a module in Python, you use the import statement followed by the name of the module.
+# For example, to import the math module, which contains a variety of mathematical functions, you would use the following statement:
+import math
+# Once a module is imported, you can use any of the functions and variables defined in the module by using the dot notation. For example, to use the sqrt function from the math module, you would write:
+import math
+result = math. sqrt(9)
+print (result)
+
+# from keyword
+# You can also import specific functions or variables from a module using the from keyword. For example, to import only the sqrt function from the math module, you would write:
+from math import sqrt,pi  #Basically it will import a particular function from a library of functions like sqrt from math and etc. 
+result = sqrt(9)*pi
+print(result)
+
+from math import * # it will import all the functions and actions from the math librery but it is not adviseable as it will import everything
+result = sqrt(9)*pi
+print(result)
+
+
+# The "as" keyword
+# Python also allows you to rename imported modules using the as keyword. This can be useful if you want to use a shorter or more descriptive name for a module, or if you want to avoid naming conflicts with other modules or variables in your code.
+# from math import sqrt as s
+# or
+import math as m
+result = m.sqrt(20)*m.pi  # basically it uses as to give a short name or shortning the keyword like writing math as m etc
+print(result)
+
+# The dir function
+# Finally, Python has a built-in function called dir that you can use to view the names of all the functions and variables defined in a module. This can be helpful for exploring and understanding the contents of a new module.
+
+# lets say you don't know about a a method which you import so you can find it buy using "dir" .
+import math
+print(dir(math))
+print(math.nan,type(nan))
+
+# This will output a list of all the names defined in the math module, including functions like sart and pi, as well as other variables and constants.
+# In summary, the import statement in Python allows you to access the functions and variables defined in a module from within your current script. You can import the entire module, specific functions or variables, or use the * wildcard to import everything. You can also use the as keyword to rename a module, and the dir function to view the contents of a module.
