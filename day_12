@@ -38,3 +38,30 @@ print(math.nan,type(nan))
 
 # This will output a list of all the names defined in the math module, including functions like sart and pi, as well as other variables and constants.
 # In summary, the import statement in Python allows you to access the functions and variables defined in a module from within your current script. You can import the entire module, specific functions or variables, or use the * wildcard to import everything. You can also use the as keyword to rename a module, and the dir function to view the contents of a module.
+
+#---------------------------------------------------
+# if __name__ =="__main __"
+
+# if __name__ =="__main __" in Python
+# The if __name__ =="__main __" idiom is a common pattern
+# used in Python scripts to determine whether the script is being run directly or being imported as a module into another script.
+# In Python, the __name__ variable is a built-in variable that is automatically set to the name of the current module. When a Python script is run directly, the __name__ variable is set to the string _main_ When the script is imported as a module into another script, the
+# __name__ variable is set to the name of the module
+
+
+import rough
+# rough.hello() so by this import rough which is user defined file and method written by me in this file when we just import and print the function in it , it print 2 times the name which mean with just import we imprted the function and runing it wo how we can 
+# solve it we can solve it by ->if __name__ =="__main __"
+rough.hello()
+
+# below block is written in another file named rough
+# def hello():
+#     print("hello anurag")
+ 
+
+# if __name__ == "__main__": # excute na ho isliye ye check lagaya jata hai 
+#     hello() 
+#     # it means agr mai issi file me chalau to chala do wrna mt chalao
+
+# In this example, the main function contains the code that should be run when the script is run directly. The if statement at the bottom checks whether the _name__ variable is equal to _main__. If it is, the main function is called.
+print(__name__) #is the file kaha se use ho rha hai like isme rough se ho rha hai aur rough me main ayea
