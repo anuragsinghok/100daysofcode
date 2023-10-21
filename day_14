@@ -1,0 +1,46 @@
+# local and global variables in python
+
+# Before we dive into the differences between local and global variables, let's first recall what a variable is in Python.
+# A variable is a named location in memory that stores a value. In Python, we can assign values to variables using the assignment operator =. For example:
+x=5
+y = "Hello, World!"
+# Now, let's talk about local and global variables.
+# A local variable is a variable that is defined within a function and is only accessible within that function. It is created when the function is called and is destroyed when the function returns.
+# On the other hand, a global variable is a variable that is defined outside of a function and is accessible from within any function in your code.
+
+# x = 4 
+# print(x)
+
+# def hello():
+#     x = 5
+#     print(x)
+#     print(f"this is local x is {x}")# fucntion varibal is a local variable and get destroyed after function executed or terminated
+#     print("hello")
+
+
+# print(f"this is global x is {x}")
+# hello()
+# x = 5
+# print(f"this is global x is {x}")
+
+
+z= 10 # global variable
+
+
+def my_function(): 
+    global z 
+    z = 6 # by this way you can change global scope variable 
+    f= 5 # local variable
+    print(f)
+
+
+my_function()
+print(z)
+# print(f) # this will cause an error because y is a local variable and is not accessible outside of the function
+
+
+# ----------------------The global keyword
+# Now, what if we want to modify a global variable from within a function? This is where the global keyword comes in.
+# The global keyword is used to declare that a variable is a global variable and should be accessed from the global scope.
+
+# you can change global var value by using globalkeyword scope
