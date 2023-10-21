@@ -13,3 +13,27 @@ f = os. open("myfile. txt", os.o_RDONLY)
 contents = os. read(f, 1024)
 # Close the file
 os.close()
+
+
+if (not os.path.exist("data")):#these line of codes wil create 100 folders in directory or folder in fraction of seconds it basically make things easy and create folder directory managing tasks easyly
+    os.mkdir("data")
+for i in range(0,100):
+    os.mkdir(f"data/day{i+1}")
+
+
+# os.rename(source,destination)  #it will rename the files 
+#example:
+for i in range(0,100):
+    os.rename(f"data/day{i+1}",f"data/tutorail{i+1}")
+
+
+# important function which will tell ki data ke ander kon kon si list hai 
+import os 
+folders =os.listdir("data")
+
+print(folders)
+
+for folder in folders:
+    print(folder)
+
+explore os module from official python documentation as there are so many methods 
