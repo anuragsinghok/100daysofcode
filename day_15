@@ -1,0 +1,85 @@
+# file  I O  in python
+
+# Writing a File
+f = open("myfiles.txt ", 'w') # it is fro writing 
+f.write("Hello anruag i am man")
+
+#Reading a file
+f = open("myfiles.txt" ,"r")
+# first we need to open file in reading mode and close other modes then we can read file content
+text = f.read()
+print(text)
+f.close() # good practice to close the file 
+# Before we can perform any operations on a file, we must first open it. Python provides the open function to open a file. It takes two arguments: the name of the file and the mode in which the file should be opened. The mode can be 'r' for reading, 'w' for writing, or 'a' for appending.
+# Here's an example of how to open a file for opening:
+
+
+
+f = open('myfiles.txt') #this will run without giing any error as r mode is default
+f = open('myfiles.txt',"rd") # it is used to open binary file  like pdf , exe , jpg files
+
+
+# by default , the open() function returns a file obejct that can be used to read from or wirte to the file ,depending on the mode.
+
+
+
+# Modes in file
+# There are various modes in which we can open files.
+# 1. read (r): This mode opens the file for reading only and gives an error if the file does not exist. This is the default mode if no mode is passed as a parameter.
+# 2. write (w): This mode opens the file for writing only and creates a new file if the file does not exist.
+# 3. append (a): This mode opens the file for appending only and creates a new file if the file does not exist. it will wrie at the end
+# 4. create (x): This mode creates a file and gives an error if the file alreadyexists
+# 5. text (1): Apart from these modes we also need to specify how the file must be handled. t mode is used to handle text files. t refers to the text mode. There is no difference between r and rt or w and wt since text mode is the default. The default mode is 'r' (open for reading text, synonym of 'rt')
+# 6. binary (b): used to handle binary files (images, pdfs,etc)
+
+# Closing a File
+# It is important to close a file after you are done with it.
+# This releases the resources used by the file and allows other programs to access it.
+# To close a file, you can use the close method.
+F = open('myftle. txt', 'r')
+# do something with the file
+f. close()
+
+
+# The 'with' statement
+
+# Alternatively, you can use the with statement to automatically close the file after you are done with it.
+with open( 'myfile.txt', 'a') as f:
+    f.write("Hey i am anurag")
+
+#.......do something with the file
+#-------------------------------------------------------------------------------------------------------------------
+# files io read,realine() and other methods
+
+
+# readline() method
+# The readline method reads a single line from the file. If we want to read multiple lines, we can use a loop:
+
+f = open('rough.txt','r')
+while True:
+    line = f.readline()# it is used to read line by line
+    if not line:
+        break
+    print(line)
+
+# writeline() method
+
+# The writelines method in Python writes a sequence of strings to a file. The sequence can be any iterable object, such as a list or a tuple.
+# Here's an example of how to use the writelines method:
+
+f = open( 'myfile. txt', 'w')
+lines = ['line 1\n', 'line 2\n', 'line 3\n']
+f.writelines(lines)
+f. close()
+
+# This will write the strings in the lines list to the file myfile.txt. 
+# The In characters are used to add newline characters to the end of each string.
+# Keep in mind that the writelines method does not add newline characters between the strings in the sequence.
+#  If you want to add newlines between the strings, you can use a loop to write each string separately:
+
+f = open('myfile. txt', 'w')
+lines = ['line 1', 'line 2', 'line 3']
+for line in lines:
+    f.write(line + '\n')
+f.close()
+  
