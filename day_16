@@ -1,0 +1,34 @@
+# seek() and tell() functions
+# In Python, the seekO and tellO functions are used to work with file objects and their positions within a file. These functions are part of the built-in io module, which provides a consistent interface for reading and writing to variaus file-like objects, such as files, pipes, and in-memory buffers.
+
+# seek() function
+# The seek0 function allows you to move the current position within a file to a specific point. The position is specified in bytes, and you can move either forward or backward from the current position. For example: 
+
+with open('rough.txt','r') as f:
+    print(type(f))
+
+    #move to the 10th byte in the file.
+    f.seek(10)# it will seek the the value upto 10th place then it will print rest 
+    #its like tume kaha se read krna hai like agr if you want to read a file contexts from 5 place so write seek(5) and it will seek first 5 places and run from 6th one
+    #read next 5 bytes
+    print(f.tell())
+    data = f.read(5)
+    print(data)
+
+
+# tell() function
+# The tell() function returns the current position within the file, in bytes. 
+# This can be useful for keeping track of your location within the file or for seeking to a specific position relative to the current position.
+
+# tell find out ki kaha tk seek kra hua hai
+
+
+# truncate() function
+# When you open a file in Python using the open function, you can specify the mode in which you want to open the file. If you specify the mode as 'w" or 'a', the file is opened in write mode and you can write to the file. However, if you want to truncate the file to a specific size, you can use the truncate function.
+# Here is an example of how to use the truncate function:
+
+with open('sample. txt', 'w') as f:
+    f.write( 'Hello World!')
+    f. truncate(5)# it means maine apni file me write krwa diya hai but also i want ki meri file ka size hai jo wo 5 character ka ho not more then that so i used truncate keyword
+with open('sample.txt', 'r') as f:
+    print(f.read())
