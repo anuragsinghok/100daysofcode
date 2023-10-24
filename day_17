@@ -1,0 +1,37 @@
+# is vs == in python
+# both are comparision operator
+
+a = [4,2,43]
+b = [4,2,43]
+
+a1 = 4 # constant object immuatble hote hai python ke hisab se so same vlaue walo ko same memory me dal deta hai same goes with string and float and tuple rest  is  is not true 
+a2 = 4
+print(a1 is a2)
+print(a1==a2)
+
+print(a is b) # it compares the exect location of object in memory
+print(a==b)#  value it compares the value
+
+# 'is' vs '==' in Python
+# In Python, is and == are both comparison operators that can be used to check if two values are equal. However, there are some important differences between the two that you should be aware of.
+# The is operator compares the identity of two objects, while the == operator compares the values of the objects. This means that is will only return True if the objects being compared are the exact same object in memory, while == will return True if the objects have the same value.
+# For example:
+
+a = [1, 2, 3]
+
+
+b = 11, 2, 31
+
+
+
+
+
+print(a == b)
+print(a is b)
+
+# True
+#false
+
+# In these cases, a and bare both pointing to the same object in memory, so is and == both return True.
+# For mutable objects such as lists and dictionaries, is and == can behave differently. In general, you should use == when you want to compare the values of two objects, and use is when you want to check if two objects are the same object in memory.
+# I hope this helps clarify the difference between is and == in python
