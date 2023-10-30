@@ -9,3 +9,4 @@ def my_function():
 def my_function():
   pass
 my_function = decorator_function(my_function)
+my_function = decorator_function(my_function)
