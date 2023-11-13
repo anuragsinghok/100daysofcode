@@ -1,12 +1,37 @@
-Python Decorators
-Python decorators are a powerful and versatile tool that allow you to modify the behavior of functions and methods. They are a way to extend the functionality of a function or method without modifying its source code.
-A decorator is a function that takes another function as an argument and returns a new function that modifies the behavior of the original function.
-The new function is often referred to as a "decorated" function. 
-@decorator_function
-def my_function():
-    pass
-# The @decorator_function notation is just a shorthand for the following code:
-def my_function():
-  pass
-my_function = decorator_function(my_function)
-my_function = decorator_function(my_function)
+# Python Decorators
+# Python decorators are a powerful and versatile tool that allow you to modify the behavior of functions and methods. They are a way to extend the functionality of a function or method without modifying its source code.
+# A decorator is a function that takes another function as an argument and returns a new function that modifies the behavior of the original function.
+# The new function is often referred to as a "decorated" function. 
+
+# notes-:
+
+# decorator are functions which modify function functionality
+
+# def function1():
+#    print("subscribe now")
+
+# func2 = function1 #(-> if i do function1() -> () means i called the funtion but here i did't call the function )
+# del function1 # after deleting the the function 1 when we call func2 it will print subscribe now as there will be copy of function 1 already in func2
+# func2()
+
+
+
+# def executor(func): # function inside a function
+#    func("this")
+  
+# executor(print)
+
+
+def dec1(func1):#decorator are use to decorate a method or fucntion like in modile apps you want to open a app but before the app you want what it will create a log so you cna do it by decorator phele log bnega then open hoga function then after functionality use hongi
+  def nowexec(): 
+      print("excuting now ") # jb ek hi kaam 10 function ke sath krna ho tb krte hai use
+      func1()
+      print("executed")
+  return nowexec
+
+@dec1
+def who_is_anurag():
+   print("anurag is a good boy")
+
+# who_is_anurag = dec1(who_is_anurag) # issi ko liken ka trika ahai iski jagah @dec1 laga diya to same functionnality krega
+who_is_anurag()
