@@ -4,31 +4,57 @@
 # Getters
 # Getters in Python are methods that are used to access the values of an object's properties. 
 # They are used to return the value of a specific property, and are typically defined using the @property decorator.
-# Here is an example of a simple class with a getter method:
 
-class MyClass:
-    def __init__(self, value): 
-     self._value = value
 
-    def show(self):
-       print(f"value is {self._value}")
 
-    @property #it is a getter you created a property of it  # it is a best way to do encapsulation 
-    def ten_value(self):
-      return 10*self._value
     
 
 # Setters
 # It is important to note that fhe getters do not take any parameters and we cannot set the value through getter method.For that we need setter method which can be added by decorating method with @property_name.setter    
-    @ten_value.setter
-    def ten_value(self,new_value):
-      self._value = new_value/10
-      return 10* self._value
-    
-obj = MyClass(10)
-print(obj.ten_value)
-obj.ten_value =56 #   this shows a error you cannot change value of it
 
-obj.show()
 
 # In this example, the MyClass class has a single property, value, which is initialized in the init method. The value method is defined as a getter using the @property decorator, and is used to return the value of the _value property.
+
+class Employee:
+  def __init__(self,fname,lname):
+    self.fname = fname
+    self.lname = lname
+    # self.email = f"{fname}.{lname}@codeanurag.com"
+  
+  def explain(self):
+    return f"This employee is {self.fname} {self.lname}"
+  
+  @property
+  def email(self):
+    if self.fname ==None or self.lname ==None:
+      return "Email is not set please set it using setter"
+    return f"{self.fname}.{self.lname}@codeanurag.com"
+  
+
+  @email.setter # ye self.fname and lname ko change kr dega pura ka pura set krdega alag (it is a type of decorator (attribute.setter ) and ussi name se function banega)
+  def email(self,string): # it is made as mai agr input du to mere input email dena se wo first name aur last name ko change kr de  this will do this
+    print("setting now...")
+    names = string.split("@") [0] # ye mail ko list bnadega @ se phele [0 ] index aur bad ke [1] index 
+    self.fname =  names.split(".")[0]
+    self.lname =  names.split(".")[1]
+    
+  @email.deleter # it is a deleter decorator like if we do not need email setter later of do not want to change value then we can call it and use it 
+  def email(self):
+    self.fname = None # obj orienterd programmign me delete nhi krte none set krte hai 
+    self.lname = None
+
+
+
+
+hindustani_supporter = Employee("Hindustani!" ,"Supporter")
+nikhil_raj_pandey = Employee("Nikhil", "Raj")
+# print (hindustani_supporter.email()) # so email is a method here and we hame email() aise call krna hoga but if we amke it a property decorator or getter then email willl run as it is so we did this
+print (hindustani_supporter.email)
+hindustani_supporter.fname = "US"
+print (hindustani_supporter.email)
+hindustani_supporter.email = "this.that@codeanurag.com"
+
+print(hindustani_supporter.fname)
+del hindustani_supporter.email
+print(hindustani_supporter.fname)
+print(hindustani_supporter.email)
