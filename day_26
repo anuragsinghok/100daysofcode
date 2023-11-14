@@ -1,0 +1,35 @@
+# Instance vs class variables
+# In Python, variables can be defined at the class level or at the instance level.
+# Understanding the difference between these types of variables is crucial for writing efficient and maintainable code.
+    
+# Class Variables
+# Class variables are defined at the class level and are shared among all instances of the class. 
+# They are defined outside of any method and are usually used to store information that is common to all instances of the class.
+#  For example, a class variable can be used to store the number of instances of a class that have been created.
+
+# Instance Variables
+# Instance variables are defined at the instance level and are unique to each instance of the class. 
+# They are defined inside the init method and are usually used to store information that is specific 
+# to each instance of the class. For example, an instance variable can be used to store the name of an employee in a class that represents an employee.
+
+
+class Employee:
+    no_of_leaves = 8 # ye sbke liye same hai sare obj ke liye (class varible ,class ki apni property,ye share krenge and instance se class ke varibale ko hcange nhi kr skte ap)
+    pass
+
+anurag = Employee()
+annu = Employee()
+anurag.name = "Anurag"
+anurag.salary = 3400
+
+annu.name = "Annu"
+annu.salary = 434
+print(annu.no_of_leaves) # yaha maine class ki property ko anurag ki madad se access kr liya (yaha varible ko instance ki madad se kiya which is anurag )
+Employee.no_of_leaves =9 #class variable can be change only with the help of class
+print(Employee.no_of_leaves)
+annu.no_of_leaves = 9 #yaha ek rohan ka naya instance variable bna deta hai obj ki apni property hai wo instance class ka varibale change nhi hoa
+print(annu.no_of_leaves)
+#below both are same things it just when we write 1st one the python convert it into second
+# emp1.showdetail()
+# employee.showdetail(emp1)
+
