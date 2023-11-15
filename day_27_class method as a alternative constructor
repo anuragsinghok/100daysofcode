@@ -1,0 +1,32 @@
+
+# class method is basically used or made for making changes in class varible via a class decorator method name @classmethod
+
+class Employee:
+    no_of_leaves = 8
+
+    def __init__(self, aname, asalary, arole):
+        self.name = aname
+        self.salary = asalary
+        self.role = arole
+    def printdetails (self) :
+        return f"The Name Is {self.name}. Salary is {self.salary} and role is {self.role}"
+    @classmethod
+    def change_leaves (cls,newleaves) : #class mehtod isliye banaya tha taki self na lena (cls is  class - wo class jisme changes kr rhe hai hum ) it take class as arguement not self
+        cls.no_of_leaves = newleaves
+    
+    @classmethod
+    def from_str(cls,string):
+        annu = string.split("-")
+        return cls(annu[0],annu[1],annu[2])
+        # return cls(*string.split("-")) # one liner of above code (i dont understand)
+
+
+
+
+# biggest benefit of useing class method is we can use it as alternative constructor
+harry = Employee ("Harry", 255, "Instructor")
+rohan = Employee ("Rohan", 455, "Student")
+Anurag = Employee.from_str("Anurag-4555-Teacher") bascially itna sara alag alag arguement na dena pade bus ek de aise aur kaam ho jye to we can use class method for that and do the work
+harry.change_leaves(34)
+print(harry.no_of_leaves)
+print(Anurag.salary)
