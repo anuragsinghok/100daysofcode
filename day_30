@@ -1,0 +1,78 @@
+# Operator Overloading in Python: An Introduction
+# Operator Overloading is a feature in Python that allows developers to redefine the behavior of mathematical and comparison operators for custom data types. This means that you can use the standard mathematical operators (+, -, */, etc.) and comparison operators (>, <, ==, etc.) in your own classes, just as you would for built-in data types like int, float, and str.
+
+# Why do we need operator overloading?
+# Operator overloading allows you to create more readable and intuitive code. For instance, consider a custom class that represents a point in 2D space. You could define a method called
+# 'add' to add two points together, but using the + operator makes the code more concise and readable.
+
+# operator overloading ek traika hota jisse hum operator ke behaviour ko change kr skte hai
+
+class Vector:
+    def __init__(self, i , j , k):
+        self.i = i
+        self.j = j 
+        self.k = k
+    def __str__(self):
+        return f" {self.i}i + {self.j}j + {self.k}k"
+    def __add__(self ,x):
+        return Vector(self.i +x.i , self.j+x.j, self.k+x.k) # coverting it into vector as if we return it will be printed as string
+        
+
+
+v = Vector(3,5,6)
+print(v)
+v2 = Vector(4,5,4)
+print(v2)
+print(v+v2)
+print(type(v+v2))
+# now if we create another class and inherit this call and define the __add__ function again in that call then will be overloaded
+
+class Vector2:
+    def __init__(self, i , j , k):
+        self.i = i
+        self.j = j 
+        self.k = k
+    def __str__(self):
+        return f" {self.i}i + {self.j}j + {self.k}k"
+    def __add__(self ,x): #overloading 
+        return Vector(self.i +x.i , self.j+x.j, self.k+x.k) # coverting it into vector as if we return it will be printed as string
+        
+
+
+v = Vector(3,5,6)
+print(v)
+v2 = Vector(4,5,4)
+print(v2)
+print(v+v2)
+print(type(v+v2))
+
+v = Vector2(5,34,9)
+print(v)
+v2 = Vector2(2,1,8)
+print(v2)
+print(v+v2)
+print(type(v+v2))
+  ---------------------------------------------------
+  # Single Inheritance in Python
+# Single inheritance is a type of inheritance where a class inherits properties and behaviors from a single parent class. This is the simplest and most common form of inheritance
+class Animal:
+    def __init__(self,name,species):
+        self.name = name
+        self.species = species
+    def make_sound(self):
+        print("sound made by animal")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        Animal.__init__(self,name, species = "Dog")
+        self.breed = breed
+    
+    def make_sound(self): #override form Animal
+        print("bark!")
+
+    
+
+d = Dog("Dog","Dogger man") 
+d.make_sound()
+f= Animal("Dog" ,"dog")
+f.make_sound()
