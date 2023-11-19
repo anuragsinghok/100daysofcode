@@ -1,0 +1,23 @@
+# Multiple Inheritance in Python
+# Multiple inheritance is a powerful feature in object-oriented programming that allows a class to inherit attributes and methods from multiple parent classes. This can be useful in situations where a class needs to inherit functionality from multiple sources.
+class employee :
+    def __init__(self,name):
+        self.name = name
+    def show(self):
+            print(f" this name is {self.name}")
+class Dancer:
+    def __init__(self,dance):
+        self.dance =  dance
+    def show(self):
+            print(f" this dance is {self.dance}")
+
+class DanceEmployee(employee,Dancer):
+    def __init__(self, dance,name):
+        self.dance = dance
+        self.name = name
+    
+o = DanceEmployee("kathak" , "shivani")
+print(o.name)
+print(o.dance)    
+print(o.show()) #jo bhi cheej phele liki hogi wo print hogi like in this case shivani phele likha hai to wo mehtod phle print hoga jisko phele child class me inherit kra hogalike employee ko phele inherit lika hai baad me dance ko
+print(DanceEmployee.mro()) #it tells the order of all
