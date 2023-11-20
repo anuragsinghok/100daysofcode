@@ -1,0 +1,19 @@
+# The time Module in Python
+# The time module in Python provides a set of functions to work with time-related operations, such as timekeeping, formatting, and time conversions. This module is part of the Python Standard Library and is available in all Python installations, making it a convenient and essential tool for a wide range of applications. In this day 84 tutorial, we'll explore the time module in Python and see how it can be used in different scenarios.
+
+# time.time()
+# The time. time() function returns the current time as a floating-point number, representing the number of seconds since the epoch (the point in time when the time module was initialized). The returned value is based on the computer's system clock and is affected by time adjustments made by the operating system, such as daylight saving time. 
+
+import time
+print(time.time()) #ye 1  jan 1970 se batata hai abhi tk kitne second bit chuka hai
+#there are more functions in time.time()
+
+print(4)
+time.sleep(3)
+print("this is printed alter 3 second")
+
+
+t =  time.localtime()
+formatted_time = time.strftime("%Y - %m - %d -> %H: %m : %s",t) # format krke  time bta rha hai like iss format me y-m-d
+
+print(formatted_time)
